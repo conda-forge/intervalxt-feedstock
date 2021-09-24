@@ -13,7 +13,7 @@ source:
     - unordered-map.patch
 
 build:
-  number: 0
+  number: 1
   # dependency libeantic is not available for Windows on conda-forge yet
   skip: true  # [win]
 
