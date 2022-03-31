@@ -1,5 +1,5 @@
 {% set name = "intervalxt" %}
-{% set version = "3.2.0" %}
+{% set version = "3.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,12 @@ package:
 
 source:
   url: https://github.com/flatsurf/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b3e641d2565ac7b2a094fd8b156bc26f5a434bf56a0ff701adbac4eee68043ac
+  sha256: a21476234583157c934fc977c41d05201ca3ce136484e4a99fb18434538a04a2
   patches:
-    # upstreamed at https://github.com/flatsurf/intervalxt/pull/168
-    - unordered-map.patch
+    - 0001-Fix-initialization-from-initializer-list-on-some-ver.patch
 
 build:
-  number: 4
+  number: 0
   # dependency libeantic is not available for Windows on conda-forge yet
   skip: true  # [win]
 
