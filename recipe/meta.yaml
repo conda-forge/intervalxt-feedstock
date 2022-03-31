@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/flatsurf/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
   sha256: a21476234583157c934fc977c41d05201ca3ce136484e4a99fb18434538a04a2
+  patches:
+    - 0001-Fix-initialization-from-initializer-list-on-some-ver.patch
 
 build:
   number: 0
