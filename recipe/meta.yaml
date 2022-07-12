@@ -12,7 +12,7 @@ source:
     - 0001-Fix-initialization-from-initializer-list-on-some-ver.patch
 
 build:
-  number: 0
+  number: 1
   # dependency libeantic is not available for Windows on conda-forge yet
   skip: true  # [win]
 
