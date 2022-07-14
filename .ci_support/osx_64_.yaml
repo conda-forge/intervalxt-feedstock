@@ -11,9 +11,9 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '12'
+- '13'
 fmt:
-- '8'
+- '9'
 gmp:
 - '6'
 macos_machine:
