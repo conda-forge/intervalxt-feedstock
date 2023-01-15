@@ -1,5 +1,5 @@
 {% set name = "intervalxt" %}
-{% set version = "3.3.1" %}
+{% set version = "3.3.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/flatsurf/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 07b1a4afbcf6d856bfbbc348e17e790d42342c5815d546ef49d756aa79833f80
+  sha256: 225464eccf9bdf12cd360ae44e8e0a0b339da57dbc842b905f4e52c7211430ad
 
 build:
-  number: 3
+  number: 0
   # dependency libeantic is not available for Windows on conda-forge yet
   skip: true  # [win]
 
