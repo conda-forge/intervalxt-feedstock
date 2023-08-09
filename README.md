@@ -1,11 +1,11 @@
-About intervalxt
-================
+About intervalxt-feedstock
+==========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/intervalxt-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/flatsurf/intervalxt
 
 Package license: GPL-3.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/intervalxt-feedstock/blob/main/LICENSE.txt)
 
 Summary: Interval Exchange Transformations
 
