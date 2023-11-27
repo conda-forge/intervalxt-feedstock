@@ -62,6 +62,7 @@ outputs:
         - {{ pin_subpackage("libintervalxt") }}
       run:
         # cppyy dynamically compiles C++ wrappers at runtime, therefore we need C++ headers of boost.
+        - libboost-headers
         - python
         - cppyy
         - cppyythonizations
