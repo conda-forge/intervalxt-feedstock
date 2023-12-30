@@ -29,7 +29,6 @@ outputs:
         - autotools_clang_conda  # [win]
         - {{ compiler('cxx') }}
       host:
-        - arb
         # We only need the libboost-headers at compile time. However, since we
         # use bits of boost in our API, code built against libintervalxt must be
         # built with a compatible version of the headers. Therefore, we add a
