@@ -10,7 +10,7 @@ source:
   sha256: b12d14391f8111ad9865e2adaf58c83c699c34965fca6a5e09f3ff2acdc08eb4
 
 build:
-  number: 0
+  number: 1
   # dependency libeantic is not available for Windows on conda-forge yet
   skip: true  # [win]
 
@@ -29,8 +29,12 @@ outputs:
         - autotools_clang_conda  # [win]
         - {{ compiler('cxx') }}
       host:
-        - arb
-        - libboost-headers
+        # We only need the libboost-headers at compile time. However, since we
+        # use bits of boost in our API, code built against libintervalxt must be
+        # built with a compatible version of the headers. Therefore, we add a
+        # liboost pin to our run exports so libbookst-headers are going to be
+        # in a compatible version.
+        - libboost-devel
         - fmt
         - gmp   # [unix]
         - mpir  # [win]
@@ -53,6 +57,8 @@ outputs:
         - gnuconfig  # [unix]
         - {{ compiler('cxx') }}
       host:
+        # Note that the libboost-devel from libintervalxt forces these headers to be
+        # compatible with ones used when building libintervalxt.
         - libboost-headers
         - python
         - cppyy
@@ -62,6 +68,8 @@ outputs:
         - {{ pin_subpackage("libintervalxt") }}
       run:
         # cppyy dynamically compiles C++ wrappers at runtime, therefore we need C++ headers of boost.
+        # Note that the libboost-devel from libintervalxt forces these headers to be
+        # compatible with ones used when building libintervalxt.
         - libboost-headers
         - python
         - cppyy
