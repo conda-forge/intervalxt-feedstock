@@ -10,7 +10,7 @@ source:
   sha256: 7596a14af8e35165259220747eeeec822aeffe7ea3760ef891262d24999a5710
 
 build:
-  number: 0
+  number: 1
   # dependency libeantic is not available for Windows on conda-forge yet
   skip: true  # [win]
 
@@ -28,6 +28,7 @@ outputs:
         - gnuconfig  # [unix]
         - autotools_clang_conda  # [win]
         - {{ compiler('cxx') }}
+        - {{ stdlib("c") }}
       host:
         # We only need the libboost-headers at compile time. However, since we
         # use bits of boost in our API, code built against libintervalxt must be
@@ -56,6 +57,7 @@ outputs:
         - autotools_clang_conda  # [win]
         - gnuconfig  # [unix]
         - {{ compiler('cxx') }}
+        - {{ stdlib("c") }}
       host:
         # Note that the libboost-devel from libintervalxt forces these headers to be
         # compatible with ones used when building libintervalxt.
