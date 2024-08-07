@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/flatsurf/{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
   sha256: 7596a14af8e35165259220747eeeec822aeffe7ea3760ef891262d24999a5710
+  patches:
+    - 0001-Allow-fmt-11-in-configure.patch
 
 build:
   number: 2
