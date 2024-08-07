@@ -17,6 +17,9 @@ fi
 
 cd libintervalxt
 
+# Apply patches to configure.ac
+autoreconf -ivf
+
 # Get an updated config.sub and config.guess
 cp $BUILD_PREFIX/share/gnuconfig/config.* .
 
