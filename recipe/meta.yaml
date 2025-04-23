@@ -33,7 +33,7 @@ outputs:
         # We only need the libboost-headers at compile time. However, since we
         # use bits of boost in our API, code built against libintervalxt must be
         # built with a compatible version of the headers. Therefore, we add a
-        # liboost pin to our run exports so libbookst-headers are going to be
+        # liboost pin to our run exports so libboost-headers are going to be
         # in a compatible version.
         - libboost-devel
         - fmt
@@ -63,7 +63,9 @@ outputs:
         # compatible with ones used when building libintervalxt.
         - libboost-headers
         - python
-        - cppyy
+        # We pin cppyy to a recent version since otherwise the solver gets
+        # confused on macOS and tries to pull in a very old version of libxml.
+        - cppyy >=3.1.2
         - cppyythonizations
         - setuptools
         - pytest
@@ -74,7 +76,9 @@ outputs:
         # compatible with ones used when building libintervalxt.
         - libboost-headers
         - python
-        - cppyy
+        # We pin cppyy to a recent version since otherwise the solver gets
+        # confused on macOS and tries to pull in a very old version of libxml.
+        - cppyy >=3.1.2
         - cppyythonizations
         - gmpxxyy
         # A subpackage does not see the run_exports of another subpackage:
